@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a |tr '\n' ','\n
+ls -a | tr '\n' ',' | sort \n
