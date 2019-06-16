@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n1 aint >> aint 
+tail -n1 iacta >> iacta  
