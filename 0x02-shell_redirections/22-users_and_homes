@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /etc/passwd | grep -v :: | grep -v ,,, | cut -d ':' -f 5,6    
