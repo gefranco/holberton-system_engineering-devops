@@ -9,7 +9,7 @@ while [ $COUNTER -le 20 ]; do
 		echo "bad luck from China"
 		;;
 		9)
-		echo "good luck from Japan"
+		echo "bad luck from Japan"
 		;;
 		17)
 		echo "bad luck from Italy"
