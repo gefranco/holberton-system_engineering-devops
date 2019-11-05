@@ -2,9 +2,10 @@
 #script that displays To infinity and beyond indefinitely
 sudo chmod -R 777 /var/run/ 
 echo $$ > /var/run/holbertonscript.pid
-trap "I hate the kill command" SIGTERM
+trap "echo I hate the kill command" SIGTERM
+trap "rm /var/run/holbertonscript.pid"  SIGQUIT 
 trap "Y U no love me?!" SIGINT
-trap "rm /var/run/holbertonscript.pid" SIGTERM SIGQUIT
+#trap "rm /var/run/holbertonscript.pid" SIGTERM SIGQUIT
 while true
 do
 	echo To infinity and beyond
