@@ -1,0 +1,6 @@
+#!/bin/bash
+# script that resolveslh to 127.0.0.2 and facebook.com to 8.8.8.8
+cp /etc/hosts ~/hosts.new
+sed 's/127.0.0.1/127.0.0.2/' ~/hosts.new
+echo facebook.com	8.8.8.8 >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
