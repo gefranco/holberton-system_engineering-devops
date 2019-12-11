@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script that install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
