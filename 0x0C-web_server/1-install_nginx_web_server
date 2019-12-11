@@ -2,7 +2,6 @@
 # script that install nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo ufw app list
-sudo ufw allow 'Nginx HTTP'
+sudo ufw -y allow 'Nginx HTTP'
 sudo -i
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
