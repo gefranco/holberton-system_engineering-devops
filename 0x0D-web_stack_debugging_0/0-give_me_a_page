@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# fix docker container
+sudo docker exec condescending_mclean service apache2 restart
