@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # replace 8080 
 sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
+service nginx restart
