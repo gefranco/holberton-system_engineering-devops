@@ -2,5 +2,12 @@
 # script that install and configure HAproxy
 sudo apt-get -y update
 sudo apt-get -y install haproxy=1.6.\*
-echo | sudo tee -a "frontend  www\tbind\t\t\t*:80\n\tdefault_backend\t\t\tweb-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\tserver web-1 35.227.43.49:80 check\n\tserver web-2 35.231.164.230:80 check"
+echo "frontend  www bind *:80
+default_backend web-backend
+
+backend web-backend
+balance roundrobin
+mode http
+server web-1 35.227.43.49:80 check
+server web-2 35.231.164.230:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
