@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#dig lb-01.holby.tech| grep -A1 'ANSWER SECTION:' | tail -n 1 |awk '{print "The subdomain " $4 $5}'
+
+#if [ "$#" -eq 1  -o "$#" -eq 2 -a "$2" -eq "www" ]
+if [ \( "$#" -eq 1 \) -o \( "$#" -eq 2 -a "$2" = "www" \) ]	
+then
+dig "www".$1 | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain www is a " $4 " record and points to "$5}'
+fi
+if [ \( "$#" -eq 1 \) -o \( "$#" -eq 2 -a "$2" = "lb-01" \) ]
+then
+dig "lb-01".$1 | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain lb-01 is a " $4 " record and points to "$5}'
+fi
+if [ \( "$#" -eq 1 \) -o \( "$#" -eq 2 -a "$2" = "web-01" \) ]
+then
+dig "web-01".$1 | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain web-01 is a " $4 " record and points to "$5}'
+fi
+if [ \( "$#" -eq 1 \) -o \( "$#" -eq 2 -a "$2" = "web-02" \) ]
+then
+dig "web-02".$1 | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain web-02 is a " $4 " record and points to "$5}'
+fi
