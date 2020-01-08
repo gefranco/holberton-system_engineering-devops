@@ -36,18 +36,16 @@ defaults
 	option forwardfor
 
 frontend web-front
-    bind 35.196.15.75:80
-    mode http
+    bind :80
     reqadd X-Forwarded-Proto:\ http
     default_backend web-backend
 
 frontend www-https
-  bind 35.196.15.75:443 ssl crt /etc/haproxy/ssl/www.holby.tech.pem
+  bind :443 ssl crt /etc/haproxy/ssl/www.holby.tech.pem
   reqadd X-Forwarded-Proto:\ https
   default_backend web-backend
 	
 backend web-backend
-   balance roundrobin
    redirect scheme https if !{ ssl_fc }
-   server 933-web-01 35.227.43.49:80 check
-   server 933-web-02 35.231.164.230:80 check
+   server web-01 35.227.43.49:80 check
+   server web-02 35.231.164.230:80 check
