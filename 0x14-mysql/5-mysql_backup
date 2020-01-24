@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+NOW=$(date +"%d-%m-%Y")
+FILE="$NOW.tar.gz"
+mysqldump -u root -p$1 --all-databases > backup.sql
+tar cfz $FILE backup.sql
