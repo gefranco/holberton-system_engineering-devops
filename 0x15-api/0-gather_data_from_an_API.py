@@ -24,13 +24,13 @@ if __name__ == "__main__":
 
             tasks = json.loads(request.text)
             for task in tasks:
-                if(task['userId'] == user['id']):
+                if(task.get('userId') == user.get('id')):
                     total_tasks += 1
-                    if(task['completed']):
-                        list_tasks_done.append(task['title'])
+                    if(task.get('completed')):
+                        list_tasks_done.append(task.get('title'))
                         tasks_done += 1
             print(
-                    "Employee " + user['name'] +
+                    "Employee " + user.get('name') +
                     " is done with tasks(" +
                     str(tasks_done) + "/" +
                     str(total_tasks) + "):")
