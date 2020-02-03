@@ -4,9 +4,9 @@ _____________________________________
 get TODO from user in https://jsonplaceholder.typicode.com/
 _____________________________________
 '''
+import json
 import requests
 import sys
-import json
 
 if __name__ == "__main__":
 
