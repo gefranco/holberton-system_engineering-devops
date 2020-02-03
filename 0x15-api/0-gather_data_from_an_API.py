@@ -35,4 +35,4 @@ if __name__ == "__main__":
                     str(tasks_done) + "/" +
                     str(total_tasks) + "):")
             for task in list_tasks_done:
-                print("\t" + task)
+                print("\t " + task)
