@@ -28,6 +28,7 @@ if __name__ == "__main__":
             with open(user_id+".json", mode='w', encoding='utf-8') as f:
                 for task in tasks:
                     if(task.get('userId') == user.get('id')):
+                        json_task = {}
                         json_task['task'] = task.get('title')
                         json_task['completed'] = task.get('completed')
                         json_task['username'] = user.get('username')
