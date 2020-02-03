@@ -27,11 +27,10 @@ if __name__ == "__main__":
             tasks = json.loads(request.text)
             with open(user_id+".json", mode='w', encoding='utf-8') as f:
                 for task in tasks:
-                    row_csv = ()
                     if(task.get('userId') == user.get('id')):
                         json_task['task'] = task.get('title')
                         json_task['completed'] = task.get('completed')
                         json_task['username'] = user.get('username')
                         list_tasks_done.append(json_task)
-                    user_json[user['id']] = list_tasks_done
+                user_json[user['id']] = list_tasks_done
                 json.dump(user_json, f)
