@@ -5,6 +5,7 @@ get TODO from all users in https://jsonplaceholder.typicode.com/
 and Export to JSON
 _____________________________________
 '''
+import collections
 import json
 import requests
 import sys
@@ -32,7 +33,7 @@ if __name__ == "__main__":
                 for task in tasks:
                     row_csv = ()
                     if(task.get('userId') == user.get('id')):
-                        json_task = {}
+                        json_task = collections.OrderedDict()
                         json_task['task'] = task.get('title')
                         json_task['completed'] = task.get('completed')
                         json_task['username'] = user.get('username')
