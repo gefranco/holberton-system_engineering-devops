@@ -31,12 +31,12 @@ if __name__ == "__main__":
                         mode='w',
                         encoding='utf-8') as f:
                 for task in tasks:
-                    row_csv = ()
+                    json_task = collections.OrderedDict()
                     if(task.get('userId') == user.get('id')):
-                        json_task = collections.OrderedDict()
+                     
+                        json_task['username'] = user.get('username')
                         json_task['task'] = task.get('title')
                         json_task['completed'] = task.get('completed')
-                        json_task['username'] = user.get('username')
                         list_tasks_done.append(json_task)
-                    user_json[user['id']] = list_tasks_done
+                user_json[user['id']] = list_tasks_done
                 json.dump(user_json, f)
