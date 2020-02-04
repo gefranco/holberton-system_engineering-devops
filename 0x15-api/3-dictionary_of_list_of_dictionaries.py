@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 encoding='utf-8') as f:
 
         for user in users:
-                list_tasks_done = [] 
+                list_tasks_done = []
                 for task in tasks:
                     json_task = collections.OrderedDict()
                     if(task.get('userId') == user.get('id')):
