@@ -19,24 +19,23 @@ if __name__ == "__main__":
     user_json = {}
     request = requests.get('https://jsonplaceholder.typicode.com/users')
     users = json.loads(request.text)
-    for user in users:
-        if(True):
-            request = requests.get(
-                'https://jsonplaceholder.typicode.com/todos'
-            )
+    todos = requests.get(
+        'https://jsonplaceholder.typicode.com/todos'
+        )
+    tasks = json.loads(todos.text)
+    with open(
+                "todo_all_employees.json",
+                mode='w',
+                encoding='utf-8') as f:
 
-            tasks = json.loads(request.text)
-            with open(
-                        "todo_all_employees.json",
-                        mode='w',
-                        encoding='utf-8') as f:
+        for user in users:
+                list_tasks_done = [] 
                 for task in tasks:
                     json_task = collections.OrderedDict()
                     if(task.get('userId') == user.get('id')):
-                     
                         json_task['username'] = user.get('username')
                         json_task['task'] = task.get('title')
                         json_task['completed'] = task.get('completed')
                         list_tasks_done.append(json_task)
                 user_json[user['id']] = list_tasks_done
-                json.dump(user_json, f)
+        json.dump(user_json, f)
