@@ -15,7 +15,7 @@ def top_ten(subreddit):
     '''
     request = requests.get(
         'https://www.reddit.com/r/'+sys.argv[1] +
-        '/top.json?limit=10&raw_json=1',
+        '/top.json?limit=11',
         allow_redirects=False,
         headers={'User-agent': 'gefrancof'}
     )
