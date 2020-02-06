@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 '''
+___________________
+module that contains the function number_of_subscribers(subreddit)
+___________________
 '''
-import requests
 import json
+import requests
 import sys
 
 
 def number_of_subscribers(subreddit):
     '''
+    queries the Reddit API and returns the number of subscribers
     '''
     try:
         request = requests.get(
