@@ -20,7 +20,7 @@ def top_ten(subreddit):
         headers={'User-agent': 'gefrancof'}
     )
     if request.status_code != 200:
-        print('None')
+        print(None)
         return
     dictionary = request.json()
     data = dictionary['data']
