@@ -15,7 +15,7 @@ def top_ten(subreddit):
     '''
     request = requests.get(
         'https://www.reddit.com/r/'+sys.argv[1] +
-        '/top.json?limit=11',
+        '/hot.json?limit=11',
         allow_redirects=False,
         headers={'User-agent': 'gefrancof'}
     )
@@ -24,9 +24,6 @@ def top_ten(subreddit):
         return
     dictionary = request.json()
     data = dictionary['data']
-    if len(data['children'] == 0):
-        print(None)
-        return
     for data_index in data['children']:
         data_children = data_index['data']
         title = data_children['title']
