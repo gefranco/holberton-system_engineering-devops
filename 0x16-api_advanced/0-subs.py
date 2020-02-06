@@ -12,6 +12,7 @@ def number_of_subscribers(subreddit):
     try:
         request = requests.get(
             'https://www.reddit.com/r/'+sys.argv[1] + '/about.json',
+            allow_redirects=False,
             headers={'User-agent': 'gefrancof'}
         )
 
