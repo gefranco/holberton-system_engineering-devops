@@ -24,6 +24,9 @@ def top_ten(subreddit):
         return
     dictionary = request.json()
     data = dictionary['data']
+    if len(data['children'] == 0):
+        print(None)
+        return
     for data_index in data['children']:
         data_children = data_index['data']
         title = data_children['title']
