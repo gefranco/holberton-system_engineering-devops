@@ -14,7 +14,7 @@ def top_ten(subreddit):
     return the first 10 hot posts listed for a given subreddit.
     '''
     request = requests.get(
-        'https://www.reddit.com/r/'+sys.argv[1] +
+        'https://www.reddit.com/r/' + sys.argv[1] +
         '/hot.json?limit=11',
         allow_redirects=False,
         headers={'User-agent': 'gefrancof'}
@@ -26,5 +26,4 @@ def top_ten(subreddit):
     data = dictionary['data']
     for data_index in data['children']:
         data_children = data_index['data']
-        title = data_children['title']
-        print(title)
+        print(data_children['title'])
