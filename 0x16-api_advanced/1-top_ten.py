@@ -15,8 +15,7 @@ def top_ten(subreddit):
     '''
     request = requests.get(
         'https://www.reddit.com/r/' + subreddit +
-        '/hot.json?limit=11',
-        allow_redirects=False,
+        '/hot.json?limit=10',
         headers={'User-agent': 'gefrancof'}
     )
     if request.status_code != 200:
