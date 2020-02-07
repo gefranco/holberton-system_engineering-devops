@@ -14,7 +14,7 @@ def top_ten(subreddit):
     return the first 10 hot posts listed for a given subreddit.
     '''
     request = requests.get(
-        'https://www.reddit.com/r/' + sys.argv[1] +
+        'https://www.reddit.com/r/' + subreddit +
         '/hot.json?limit=11',
         allow_redirects=False,
         headers={'User-agent': 'gefrancof'}
